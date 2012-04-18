@@ -14,58 +14,48 @@ namespace prep.collections
       this.movies = list_of_movies;
     }
 
-    public IEnumerable<Movie> all_movies()
-    {
+    public IEnumerable<Movie> all_movies() {
       return movies.one_at_a_time();
     }
 
     public void add(Movie movie)
     {
-      if (already_contains(movie)) return;
-
-      movies.Add(movie);
-    }
-
-    bool already_contains(Movie movie)
-    {
-      return movies.Contains(movie);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_matching(MovieCriteria criteria)
     {
-      return movies.all_items_matching(new AnonymousMatch<Movie>(criteria.Invoke));
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
     {
-      return
-        all_movies_matching(
-          m => m.production_studio == ProductionStudio.Disney || m.production_studio == ProductionStudio.Pixar);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_not_published_by_pixar()
     {
-      return all_movies_matching(m => m.production_studio != ProductionStudio.Pixar);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_published_after(int year)
     {
-      return all_movies_matching(m => m.date_published.Year > year);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_movies_published_between_years(int startingYear, int endingYear)
     {
-      return all_movies_matching(m => m.date_published.Year >= startingYear && m.date_published.Year <= endingYear);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_kid_movies()
     {
-      return all_movies_matching(m => m.genre == Genre.kids);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> all_action_movies()
     {
-      return all_movies_matching(m => m.genre == Genre.action);
+      throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> sort_all_movies_by_date_published_descending()

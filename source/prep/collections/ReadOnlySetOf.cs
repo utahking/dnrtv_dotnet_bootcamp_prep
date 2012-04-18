@@ -5,21 +5,18 @@ namespace prep.collections
 {
   public class ReadOnlySetOf<Item> : IEnumerable<Item>
   {
-    IList<Item> items;
+    private readonly IList<Item> _items;
 
-    public ReadOnlySetOf(IList<Item> items)
-    {
-      this.items = items;
+    public ReadOnlySetOf(IList<Item> items) {
+      _items = items;
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
+    public IEnumerator<Item> GetEnumerator() {
+      return _items.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() {
       return GetEnumerator();
-    }
-
-    public IEnumerator<Item> GetEnumerator()
-    {
-      return items.GetEnumerator();
     }
   }
 }
