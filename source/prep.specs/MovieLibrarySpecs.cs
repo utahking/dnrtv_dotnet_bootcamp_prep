@@ -191,8 +191,8 @@ namespace prep.specs
       It should_be_able_to_find_all_movies_published_by_pixar = () =>
       {
         //var criteria = Where<Movie>.has_a(x => x.production_studio).equal_to(ProductionStudio.Pixar);
-        //var results = sut.all_movies().all_items_matching(criteria);
-        //results.ShouldContainOnly(cars, a_bugs_life);
+        var results = sut.all_movies_published_by_pixar();
+        results.ShouldContainOnly(cars, a_bugs_life);
       };
 
       It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
